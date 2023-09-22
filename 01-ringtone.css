@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+
+body{
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.keys{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5rem;
+}
+
+.key{
+    border: 1px solid green;
+    padding: 1rem;
+    width: 60px;
+}

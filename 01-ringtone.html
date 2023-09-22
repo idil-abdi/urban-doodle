@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./01-ringtone.css" />
+    <title>Ringtone</title>
+  </head>
+  <body>
+    <h1>Choose Your Favourite Ringtone?</h1>
+
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+      </div>
+      <div data-key="66" class="key">
+        <kbd>B</kbd>
+      </div>
+      <div data-key="67" class="key">
+        <kbd>C</kbd>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+      </div>
+    </div>
+
+    <audio data-key="65" src="./01-asset/ringtone01.wav"></audio>
+    <audio data-key="66" src="./01-asset/ringtone02.wav"></audio>
+    <audio data-key="67" src="./01-asset/ringtone03.wav"></audio>
+    <audio data-key="68" src="./01-asset/ringtone04.wav"></audio>
+
+    <script>
+      window.addEventListener("keydown", playingSound);
+
+      function playingSound(e) {
+        const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
+        const key = document.querySelector(`.key[data-key='${e.keyCode}']`);
+        if (!audio) return;
+        audio.currentTime = 0;
+        audio.play();
+        key.classList.add("playing");
+      }
+    </script>
+  </body>
+</html>
